@@ -8,8 +8,8 @@ hooks:
   ApplicationStop:
     - location: scripts/stop_streamlit.sh
       timeout: 300
-      runas: root
+      # runas: root
   ApplicationStart:
     - location: scripts/start_streamlit.sh
       timeout: 300
-      runas: root
+      # runas: root
