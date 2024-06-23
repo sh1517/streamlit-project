@@ -162,7 +162,11 @@ Metadata:
           - PrivateRoutingTable02Id #
           - DatabaseRoutingTableId
           - TransitGWRoutingTableId
-          
+
+      - 
+        Label: 
+          default: "Computing Resource Configuration"
+        Parameters: 
           # - KeyName
           - EC2OS
           - EC2InstanceNameNetwork
@@ -557,6 +561,16 @@ Outputs:
     Description: Second Private Subnet Resource Id 
     Export:
       Name: !Sub "${AWS::StackName}-PrivateSubnet02"
+  DatabaseSubnet01:
+    Value: !Ref DatabaseSubnet01
+    Description: First Private Subnet Resource Id 
+    Export:
+      Name: !Sub "${AWS::StackName}-DatabaseSubnet01"
+  DatabaseSubnet02:
+    Value: !Ref DatabaseSubnet02
+    Description: Second Private Subnet Resource Id 
+    Export:
+      Name: !Sub "${AWS::StackName}-DatabaseSubnet02"
   TransitGWSubnet01:
     Value: !Ref TransitGWSubnet01
     Description: First Transit Gateway Subnet Resource Id 
