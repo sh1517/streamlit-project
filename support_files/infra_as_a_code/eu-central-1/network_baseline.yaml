@@ -113,7 +113,7 @@ Parameters:
   EC2InstanceNameNetwork:
     Description: Name Tag for EC2
     Type: String
-    Default: lab-edu-ec2-network-2nd-ap-02
+    Default: lab-edu-ec2-network-2nd-ap
   EC2InstanceType:
     Description: WebServer EC2 instance type
     Type: String
@@ -121,7 +121,7 @@ Parameters:
   EC2InstanceRoleName:
     Description: EC2 Instance Role Name
     Type: String
-    Default: lab-edu-role-webserver-2nd-ap-02
+    Default: lab-edu-role-webserver-2nd-ap
   EC2SecurityGroupNetwork:
     Description: Security Group Name for Network Server
     Type: String
