@@ -1,13 +1,12 @@
 #!/bin/bash
 
 # Create a new directory named 'cloud9_settings' and navigate into it
-mkdir cloud9_settings
-cd cloud9_settings
+mkdir cloud-wave-workspace
+cd cloud-wave-workspace
 
 # Initialize a new Git repository in the current directory
-dnf install git -y
-git init
 git config --global init.defaultBranch main
+git init
 
 # Enable sparse-checkout to allow partial cloning of the repository
 git config core.sparseCheckout true
