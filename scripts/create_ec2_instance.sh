@@ -16,7 +16,7 @@ AMI_ID="ami-0ff1cd0b5d98708d1"
 INSTANCE_TYPE="t3.micro"
 
 # CREATE KEY-PAIR
-KEY_NAME="lab-edu-pem-network"
+KEY_NAME="lab-edu-key-network"
 mkdir ec2_pem
 cd ec2_pem
 aws ec2 create-key-pair --key-name $KEY_NAME --query 'KeyMaterial' --output text > $KEY_NAME.pem

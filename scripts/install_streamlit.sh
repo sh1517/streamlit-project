@@ -55,23 +55,14 @@ echo "Stress Tool 설치"
 echo "################"
 sudo dnf install stress -y
 
-
-echo "##################"
-echo "Git & Code Install"
-echo "##################"
-yum install git -y
-cd /root/
-git clone https://github.com/sh1517/streamlit-project.git
-
 echo "##############"
 echo "Upgrade AWSCLI"
 echo "##############"
-cd streamlit-project
-sh scripts/upgrade_aws_cli_v2.sh
+sh ~/environment/cloud-wave-workspace/scripts/upgrade_aws_cli_v2.sh
 
 
 echo "#################"
 echo "Application Start"
 echo "#################"
-cd streamlit-project
-streamlit run main.py --server.port 80
+cd ~/environment/cloud-wave-workspace/support_files
+sudo streamlit run ec2_main_home.py --server.port 80
