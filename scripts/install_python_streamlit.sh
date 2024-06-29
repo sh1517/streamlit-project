@@ -60,18 +60,24 @@ echo "##################"
 echo "Git & Code Install"
 echo "##################"
 yum install git -y
-cd /root/
-git clone https://github.com/sh1517/streamlit-project.git
+mkdir ~/cloud-wave-workspace
+cd ~/cloud-wave-workspace
+git config --global init.defaultBranch main
+git init
+git config core.sparseCheckout true
+git remote add origin https://github.com/sh1517/streamlit-project.git
+echo "scripts/" >> .git/info/sparse-checkout
+echo "support_files/" >> .git/info/sparse-checkout
+git pull origin main
 
 echo "##############"
 echo "Upgrade AWSCLI"
 echo "##############"
-cd streamlit-project
-sh scripts/upgrade_aws_cli_v2.sh
+sh ~/cloud-wave-workspace/scripts/upgrade_aws_cli_v2.sh
 
 
 echo "#################"
 echo "Application Start"
 echo "#################"
-cd streamlit-project
-streamlit run main.py --server.port 80
+cd ~/cloud-wave-workspace/support_files
+sudo streamlit run ec2_main_home.py --server.port 80
