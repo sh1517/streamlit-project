@@ -45,52 +45,52 @@ Parameters:
   PublicSubnet01Id:
     Description: ID for PublicSubnet01
     Type: String
-    Default: lab-edu-sub-pub-01
+    Default: lab-edu-sub-eu-pub-01
   PublicSubnet02Id:
     Description: ID for PublicSubnet02
     Type: String
-    Default: lab-edu-sub-pub-02
+    Default: lab-edu-sub-eu-pub-02
   PrivateSubnet01Id:
     Description: ID for PrivateSubnet01
     Type: String
-    Default: lab-edu-sub-pri-01
+    Default: lab-edu-sub-eu-pri-01
   PrivateSubnet02Id:
     Description: ID for PrivateSubnet02
     Type: String
-    Default: lab-edu-sub-pri-02
+    Default: lab-edu-sub-eu-pri-02
   DatabaseSubnet01Id:
     Description: ID for DatabaseSubnet01
     Type: String
-    Default: lab-edu-sub-db-01
+    Default: lab-edu-sub-eu-db-01
   DatabaseSubnet02Id:
     Description: ID for DatabaseSubnet02
     Type: String
-    Default: lab-edu-sub-db-02
+    Default: lab-edu-sub-eu-db-02
   TransitGWSubnet01Id:
     Description: ID for TransitGWSubnet01
     Type: String
-    Default: lab-edu-sub-tgw-01
+    Default: lab-edu-sub-eu-tgw-01
   TransitGWSubnet02Id:
     Description: ID for TransitGWSubnet02
     Type: String
-    Default: lab-edu-sub-tgw-02
+    Default: lab-edu-sub-eu-tgw-02
 
   PublicRoutingTableId:
     Description: ID for PublicRoutingTableId
     Type: String
-    Default: lab-edu-rtb-pub
+    Default: lab-edu-rtb-eu-pub
   PrivateRoutingTableId:
     Description: ID for PrivateRoutingTable01Id
     Type: String
-    Default: lab-edu-rtb-pri
+    Default: lab-edu-rtb-eu-pri
   DatabaseRoutingTableId:
     Description: ID for DatabaseRoutingTableId
     Type: String
-    Default: lab-edu-rtb-db
+    Default: lab-edu-rtb-eu-db
   TransitGWRoutingTableId:
     Description: ID for TransitGWRoutingTableId
     Type: String
-    Default: lab-edu-rtb-tgw
+    Default: lab-edu-rtb-eu-tgw
 
   AvailabilityZoneSubnet01:
     Description: AvailabilityZone for every First subnet
