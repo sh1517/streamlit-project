@@ -16,7 +16,7 @@ AMI_ID="ami-0ff1cd0b5d98708d1"
 INSTANCE_TYPE="t3.micro"
 
 # CREATE KEY-PAIR
-KEY_NAME="lab-edu-key-network"
+KEY_NAME="lab-edu-pem-network"
 mkdir ec2_pem
 cd ec2_pem
 aws ec2 create-key-pair --key-name $KEY_NAME --query 'KeyMaterial' --output text > $KEY_NAME.pem
@@ -31,8 +31,8 @@ aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port
 NETWORK_EC2_IP_01=$(aws ec2 run-instances --image-id $AMI_ID --count 1 --instance-type $INSTANCE_TYPE --key-name $KEY_NAME --security-group-ids $SG_ID --subnet-id $SUBNET_ID_PRIVATE_01 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$NETWORK_EC2_NAME_01}]" --query "Instances[0].PrivateIpAddress" --output text)
 NETWORK_EC2_IP_02=$(aws ec2 run-instances --image-id $AMI_ID --count 1 --instance-type $INSTANCE_TYPE --key-name $KEY_NAME --security-group-ids $SG_ID --subnet-id $SUBNET_ID_PRIVATE_02 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$NETWORK_EC2_NAME_02}]" --query "Instances[0].PrivateIpAddress" --output text)
 
-echo "$NETWORK_EC2_IP_01 | $NETWORK_EC2_NAME_01" >> ec2_information.txt
-echo "$NETWORK_EC2_IP_02 | $NETWORK_EC2_NAME_02" >> ec2_information.txt
+echo "$NETWORK_EC2_NAME_01 | ssh -i ~/environment/cloud-wave-workspace/scripts/ec2_pem/$KEY_NAME.pem ec2-user@$NETWORK_EC2_IP_01" >> ec2_information.txt
+echo "$NETWORK_EC2_NAME_02 | ssh -i ~/environment/cloud-wave-workspace/scripts/ec2_pem/$KEY_NAME.pem ec2-user@$NETWORK_EC2_IP_02" >> ec2_information.txt
 
 
 
