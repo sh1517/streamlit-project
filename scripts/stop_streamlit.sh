@@ -1,6 +1,6 @@
 #!/bin/bash
 APP_Name=streamlit
-APP_PID=$(pgrep -f $(APP_Name))
+APP_PID=$(pgrep -f $APP_Name)
 
 if [ -z $APP_PID ]
 then
