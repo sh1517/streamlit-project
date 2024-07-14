@@ -7,7 +7,7 @@ sudo dnf install postgresql-devel -y
 
 # PostgreSQL Dev Tool Install
 pip install psycopg2-binary
-pip install psycopg2
+# pip install psycopg2
 
 # user switching
 # postgres 유저 내 생성되는 Data Directory 접근은 가능하지만 다른 유저에서는 생성하지 못한다.
