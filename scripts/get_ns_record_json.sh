@@ -15,7 +15,7 @@ RECORD_NAME=$1
 ZONE_NAME="cj-cloud-wave.com."
 ZONE_ID=$(aws route53 list-hosted-zones --query "HostedZones[?Name == '$RECORD_NAME.$ZONE_NAME'].Id" --output text)
 JSON_DIR="JSON_FILE"/$RECORD_NAME.json
-cp sample.json $JSON_DIR
+cp ns_record_sample.json $JSON_DIR
 
 # NS 레코드 캡처
 NS_RECORDS=($(aws route53 list-resource-record-sets --hosted-zone-id $ZONE_ID --query "ResourceRecordSets[?Type == 'NS' && Name == '$RECORD_NAME.$ZONE_NAME'].ResourceRecords[].Value" --output text))
